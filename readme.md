@@ -10,7 +10,7 @@
 		Addr:"127.0.0.1:3306",
 		ModelPath:"./model",
 	}
-	syncdb := syncdb.New(config)
+	syncdb := syncdb.New(&config)
 
 二、数据库同步到结构体
 

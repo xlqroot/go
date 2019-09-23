@@ -25,7 +25,7 @@ type syncDB struct {
 
 
 
-func New(config Config) *syncDB  {
+func New(config *Config) *syncDB  {
 	dsn := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8&parseTime=true",config.User,config.Psd,config.Addr,config.DB)
 	engine,err := gorose.Open(&gorose.Config{Driver: "mysql", Dsn: dsn})
 	if err != nil {
