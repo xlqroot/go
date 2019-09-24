@@ -34,6 +34,10 @@ func (syncdb *syncDB)doDB(u interface{})  {
 
 	fk := reflect.TypeOf(u)
 
+	if fk.Kind().String() == "ptr" {
+		fk = fk.Elem()
+	}
+
 	if fk.Kind().String() != "struct" {
 		fmt.Println(upToLower(fk.Name()),"不是结构体")
 		return
